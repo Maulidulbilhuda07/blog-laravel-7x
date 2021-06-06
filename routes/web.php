@@ -15,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 Auth::routes();
 Route::get('/', 'BlogController@index');
+Route::get('/isi/{slug}', 'BlogController@BlogIsi');
+Route::get('/ListBlog', 'BlogController@ListBlog');
+Route::get('/ListCategory/{Category:slug}','BlogController@ListCategory')->name('ListCategory');
+Route::get('/cari',  'BlogController@Cari');
+
 Route::group(['middleware'=>'auth'],function(){
     Route::get('/home', 'HomeController@index')->name('home');
     Route::resource('/category', 'CategoryController');
