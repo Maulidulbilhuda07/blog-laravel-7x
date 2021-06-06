@@ -1,3 +1,6 @@
+
+<p  align="center">Blog Untuk Pembelajaran</p>
+<p  align="center">Jangan Mengedit credit footer yang ada di templade backend atau pun di template frontend</p>
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
