@@ -77,21 +77,12 @@
                     <!-- nav -->
                     <ul class="nav-menu">
                         <li><a href="{{ url('/') }}">Home</a></li>
-                        <li class="has-dropdown">
-                            <a href="index.html">Category</a>
-                            <div class="dropdown">
-                                <div class="dropdown-body">
-                                    <ul class="dropdown-list">
-                                        @foreach ($category_widget as $cat)
-                                            <li><a href="category.html">{{ $cat->name }}</a></li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
+                      @foreach ($category_widget as $cat)
+                        <li><a href="{{ url('ListCategory',$cat->slug) }}">{{ $cat->name }}</a></li>
+                        @endforeach
                         <li><a href="{{ url('ListBlog') }}">List  Posts</a></li>
-                        <li><a href="#">Health</a></li>
-                        <li><a href="#">Travel</a></li>
+                        <li><a href="#">about</a></li>
+                        <li><a href="#">Contacts</a></li>
                     </ul>
                     <!-- /nav -->
                 </div>
