@@ -69,54 +69,20 @@
         <h2 class="title">Popular Posts</h2>
     </div>
     <!-- post -->
-    <div class="post post-widget">
-        <a class="post-img" href="blog-post.html"><img src="./img/widget-3.jpg" alt=""></a>
-        <div class="post-body">
-            <div class="post-category">
-                <a href="category.html">Lifestyle</a>
+    @foreach ($populer_posts as $populer)
+        <div class="post post-widget">
+            <a class="post-img" href="blog-post.html"><img src="{{ asset('uploads/posts/'.$populer->gambar) }}" alt=""></a>
+            <div class="post-body">
+                <div class="post-category">
+                    <a href="category.html">{{ $populer->category->name }}</a>
+                </div>
+                <h3 class="post-title"><a href="{{url('isi',$populer->slug)}}">{{ substr($populer->judul,0,30) }}...</a></h3>
+                        <div class="text-secondary" style="font-size:12px">
+                            Dibaca {{ $populer->read }} x
+                        </div>
             </div>
-            <h3 class="post-title"><a href="blog-post.html">Ne bonorum praesent cum, labitur
-                    persequeris definitionem quo cu?</a></h3>
         </div>
-    </div>
-    <!-- /post -->
-    <!-- post -->
-    <div class="post post-widget">
-        <a class="post-img" href="blog-post.html"><img src="./img/widget-2.jpg" alt=""></a>
-        <div class="post-body">
-            <div class="post-category">
-                <a href="category.html">Technology</a>
-                <a href="category.html">Lifestyle</a>
-            </div>
-            <h3 class="post-title"><a href="blog-post.html">Mel ut impetus suscipit tincidunt. Cum
-                    id ullum laboramus persequeris.</a></h3>
-        </div>
-    </div>
-    <!-- /post -->
-    <!--post -->
-    <div class="post post-widget">
-        <a class="post-img" href="blog-post.html"><img src="./img/widget-4.jpg" alt=""></a>
-        <div class="post-body">
-            <div class="post-category">
-                <a href="category.html">Health</a>
-            </div>
-            <h3 class="post-title"><a href="blog-post.html">Postea senserit id eos, vivendo
-                    periculis ei qui</a></h3>
-        </div>
-    </div>
-    <!-- /post -->
-    <!-- post -->
-    <div class="post post-widget">
-        <a class="post-img" href="blog-post.html"><img src="./img/widget-5.jpg" alt=""></a>
-        <div class="post-body">
-            <div class="post-category">
-                <a href="category.html">Health</a>
-                <a href="category.html">Lifestyle</a>
-            </div>
-            <h3 class="post-title"><a href="blog-post.html">Sed ut perspiciatis, unde omnis iste
-                    natus error sit</a></h3>
-        </div>
-    </div>
+    @endforeach
     <!-- /post -->
 </div>
 <!-- /post widget -->
